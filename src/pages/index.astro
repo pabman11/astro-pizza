@@ -1,13 +1,77 @@
 ---
+import HomeIcon from '../Icons/HomeIcon.astro';
+import ContactIcon from '../Icons/ContactIcon.astro';
+import NotificationsIcon from '../Icons/NotificationsIcon.astro';
+import UserIcon from '../Icons/UserIcon.astro';
 
+import MenuIcon from '../Icons/MenuIcon.astro';
+
+import SettingsIcon from '../Icons/SettingsIcon.astro';
+import SearchIcon from '../Icons/SearchIcon.astro';
+
+
+const colorActive = '#FA6163';
 ---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>Astro</title>
+		<title>Order your Pizza</title>
+		<style>
+
+			input:focus-within ~ label {
+			@apply text-blue-500;
+			}
+
+			input:focus-within ~ label,
+			input:not(:placeholder-shown) ~ label {
+			@apply transform scale-75 -translate-y-4 z-0 ml-3 px-1 py-0;
+			}
+		</style>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="h-screen block bg-gradient-to-b from-white via-white to-gray-100">
+		<header class="flex justify-between items-center p-4">
+			<button><MenuIcon /></button>
+			<a>
+			<span class="bg-[#f1e3fc] text-white p-2 rounded-full transform rotate-45">
+				🤪
+			</span>
+			</a>
+		</header>
+		<main class="p-4">
+			<section>
+				<h2 class="text-xl font-light text-gray-500">Hey There!</h2>
+				<h1 class="text-2xl font-semibold">Find your meal now</h1>
+				<article class="flex w-100 my-4 gap-2" title="Search">
+					<form class="block flex-1 w-full">
+						<div class="relative flex rounded-md border-2 focus-within:border-blue-500">
+							<span class="text-gray-300">
+								<SearchIcon />
+							</span>
+							<input type="text" placeholder=" " class="block pl-4 w-full text-lg appearance-none focus:outline-none bg-transparent" name="q" />
+							<label class="absolute top-0 pl-8 leading-7 text-gray-300 text-sm bg-white -z-10 duration-300 origin-[33%_0%]" for="q">Search</label>
+						</div>
+					</form>
+					<button class="bg-[#FA6163] rounded-md text-white w-1/12 p-1">
+						<SettingsIcon />
+					</button>
+				</article>
+			</section>
+		</main>
+		<footer class="fixed bottom-0 w-full bg-white pb-4 pt-4">
+			<nav>
+				<ul class="flex justify-around">
+					<li class="flex flex-col justify-center items-center gap-1" style="color: ${colorActive};" title="Home">
+						<HomeIcon />
+						<span class="w-1 h-1 rounded-full" style="background-color: ${colorActive};">&nbsp;</span>
+					</li>
+					<li title="Contact"><ContactIcon /></li>
+					<li title="Notifications"><NotificationsIcon /></li>
+					<li title="User"><UserIcon /></li>
+				</ul>
+			</nav>
+		</footer>
+		<!-- Icons from https://heroicons.com/ -->
+		<!-- Design:  https://cdn.dribbble.com/users/4137552/screenshots/18017961/media/faac3923ed3090e01d8c239e076d72c2.jpg -->
 	</body>
 </html>
