@@ -4,6 +4,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pabman11.github.io/astro-pizza/',
+  site: 'https://pabman11.github.io/',
   integrations: [tailwind()]
 });
