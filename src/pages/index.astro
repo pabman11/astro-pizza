@@ -25,7 +25,7 @@ const colorActive = '#FA6163';
 
 			input:focus-within ~ label,
 			input:not(:placeholder-shown) ~ label {
-			@apply transform scale-75 -translate-y-4 z-0 ml-3 px-1 py-0;
+			@apply transform scale-75 -translate-y-[100%] z-0 ml-3 px-1 py-0 text-lg absolute;
 			}
 		</style>
 	</head>
@@ -43,19 +43,67 @@ const colorActive = '#FA6163';
 				<h2 class="text-xl font-light text-gray-500">Hey There!</h2>
 				<h1 class="text-2xl font-semibold">Find your meal now</h1>
 				<article class="flex w-100 my-4 gap-2" title="Search">
-					<form class="block flex-1 w-full">
-						<div class="relative flex rounded-md border-2 focus-within:border-blue-500">
+					<form class="block flex-1 w-4/5">
+						<div class="relative h-full flex items-center rounded-md border-2 focus-within:border-blue-500">
 							<span class="text-gray-300">
 								<SearchIcon />
 							</span>
-							<input type="text" placeholder=" " class="block pl-4 w-full text-lg appearance-none focus:outline-none bg-transparent" name="q" />
-							<label class="absolute top-0 pl-8 leading-7 text-gray-300 text-sm bg-white -z-10 duration-300 origin-[33%_0%]" for="q">Search</label>
+							<input type="text" placeholder=" " class="h-full text-sm md:text-base block pl-4 w-full text-md appearance-none focus:outline-none bg-transparent" name="q" />
+							<label class="absolute h-100 pl-8 text-gray-300 text-xs bg-white -z-10 duration-300 origin-[33%_0%]" for="q">
+								<span class="relative top-[50%] transform translate-y-[-50%]">Search</span>
+							</label>
 						</div>
 					</form>
-					<button class="bg-[#FA6163] rounded-md text-white w-1/12 p-1">
+					<button class="bg-[#FA6163] rounded-md text-white w-1/5 p-1">
 						<SettingsIcon />
 					</button>
 				</article>
+			</section>
+			<section class="mt-4">
+				<header class="flex justify-between">
+					<h3 class="text-xs font-bold">Categories</h3>
+					<a href="#" class="text-xs text-gray-500">See all</a>
+				</header>
+				<article class="mt-4">
+					<ul class="list-none grid grid-cols-5 gap-2 justify-between ">
+						<li>
+							<a class="flex flex-col p-2 text-center bg-[#FA6163] text-white rounded-md">
+								<span class="text-2xl" title="Pizza Icon">🍕</span>
+								<span class="text-xs text-[0.66rem]">Pizzas</span>
+							</a>
+						</li>
+						<li>
+							<a class="flex flex-col p-2 text-center border rounded-md">
+								<span class="text-2xl"  title="Burger Icon">🍔</span>
+								<span class="text-xs text-[0.66rem]">Burgers</span>
+							</a>
+						</li>
+						<li>
+							<a class="flex flex-col p-2 text-center border rounded-md">
+								<span class="text-2xl" title="Sandwich Icon">🥪</span>
+								<span class="text-xs text-[0.66rem]">Sandwich</span>
+							</a>
+						</li>
+						<li>
+							<a class="flex flex-col p-2 text-center border rounded-md">
+								<span class="text-2xl" title="Croissant Icon">🥐</span>
+								<span class="text-xs text-[0.66rem]">Breakfast</span>
+							</a>
+						</li>
+						<li>
+							<a class="flex flex-col p-2 text-center border rounded-md">
+								<span class="text-2xl" title="Brochette Icon">🍢</span>
+								<span class="text-xs text-[0.66rem]">Brochette</span>
+							</a>
+						</li>
+					</ul>
+				</article>
+			</section>
+			<section class="mt-4">
+				<header class="flex justify-between">
+					<h3 class="text-xs font-bold">Meals for you</h3>
+					<a href="#" class="text-xs text-gray-500">See all</a>
+				</header>
 			</section>
 		</main>
 		<footer class="fixed bottom-0 w-full bg-white pb-4 pt-4">
