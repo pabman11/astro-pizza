@@ -1,125 +1,149 @@
 ---
-import HomeIcon from '../Icons/HomeIcon.astro';
-import ContactIcon from '../Icons/ContactIcon.astro';
-import NotificationsIcon from '../Icons/NotificationsIcon.astro';
-import UserIcon from '../Icons/UserIcon.astro';
+import HomeIcon from "../Icons/HomeIcon.astro";
+import ContactIcon from "../Icons/ContactIcon.astro";
+import NotificationsIcon from "../Icons/NotificationsIcon.astro";
+import UserIcon from "../Icons/UserIcon.astro";
 
-import MenuIcon from '../Icons/MenuIcon.astro';
+import MenuIcon from "../Icons/MenuIcon.astro";
 
-import SettingsIcon from '../Icons/SettingsIcon.astro';
-import SearchIcon from '../Icons/SearchIcon.astro';
+import SettingsIcon from "../Icons/SettingsIcon.astro";
+import SearchIcon from "../Icons/SearchIcon.astro";
 
-
-const colorActive = '#FA6163';
+const colorActive = "#FA6163";
 ---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Order your Pizza</title>
-		<style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Order your Pizza</title>
+    <style>
+      input:focus-within ~ label {
+        @apply text-blue-500;
+      }
 
-			input:focus-within ~ label {
-			@apply text-blue-500;
-			}
-
-			input:focus-within ~ label,
-			input:not(:placeholder-shown) ~ label {
-			@apply transform scale-75 -translate-y-[100%] z-0 ml-3 px-1 py-0 text-lg absolute;
-			}
-		</style>
-	</head>
-	<body class="h-screen block bg-gradient-to-b from-white via-white to-gray-100">
-		<header class="flex justify-between items-center p-4">
-			<button><MenuIcon /></button>
-			<a>
-			<span class="bg-[#f1e3fc] text-white p-2 rounded-full transform rotate-45">
-				🤪
-			</span>
-			</a>
-		</header>
-		<main class="p-4">
-			<section>
-				<h2 class="text-xl font-light text-gray-500">Hey There!</h2>
-				<h1 class="text-2xl font-semibold">Find your meal now</h1>
-				<article class="flex w-100 my-4 gap-2" title="Search">
-					<form class="block flex-1 w-4/5">
-						<div class="relative h-full flex items-center rounded-md border-2 focus-within:border-blue-500">
-							<span class="text-gray-300">
-								<SearchIcon />
-							</span>
-							<input type="text" placeholder=" " class="h-full text-sm md:text-base block pl-4 w-full text-md appearance-none focus:outline-none bg-transparent" name="q" />
-							<label class="absolute h-100 pl-8 text-gray-300 text-xs bg-white -z-10 duration-300 origin-[33%_0%]" for="q">
-								<span class="relative top-[50%] transform translate-y-[-50%]">Search</span>
-							</label>
-						</div>
-					</form>
-					<button class="bg-[#FA6163] rounded-md text-white w-1/5 p-1">
-						<SettingsIcon />
-					</button>
-				</article>
-			</section>
-			<section class="mt-4">
-				<header class="flex justify-between">
-					<h3 class="text-xs font-bold">Categories</h3>
-					<a href="#" class="text-xs text-gray-500">See all</a>
-				</header>
-				<article class="mt-4">
-					<ul class="list-none grid grid-cols-5 gap-2 justify-between ">
-						<li>
-							<a class="flex flex-col p-2 text-center bg-[#FA6163] text-white rounded-md">
-								<span class="text-2xl" title="Pizza Icon">🍕</span>
-								<span class="text-xs text-[0.66rem]">Pizzas</span>
-							</a>
-						</li>
-						<li>
-							<a class="flex flex-col p-2 text-center border rounded-md">
-								<span class="text-2xl"  title="Burger Icon">🍔</span>
-								<span class="text-xs text-[0.66rem]">Burgers</span>
-							</a>
-						</li>
-						<li>
-							<a class="flex flex-col p-2 text-center border rounded-md">
-								<span class="text-2xl" title="Sandwich Icon">🥪</span>
-								<span class="text-xs text-[0.66rem]">Sandwich</span>
-							</a>
-						</li>
-						<li>
-							<a class="flex flex-col p-2 text-center border rounded-md">
-								<span class="text-2xl" title="Croissant Icon">🥐</span>
-								<span class="text-xs text-[0.66rem]">Breakfast</span>
-							</a>
-						</li>
-						<li>
-							<a class="flex flex-col p-2 text-center border rounded-md">
-								<span class="text-2xl" title="Brochette Icon">🍢</span>
-								<span class="text-xs text-[0.66rem]">Brochette</span>
-							</a>
-						</li>
-					</ul>
-				</article>
-			</section>
-			<section class="mt-4">
-				<header class="flex justify-between">
-					<h3 class="text-xs font-bold">Meals for you</h3>
-					<a href="#" class="text-xs text-gray-500">See all</a>
-				</header>
-			</section>
-		</main>
-		<footer class="fixed bottom-0 w-full bg-white pb-4 pt-4">
-			<nav>
-				<ul class="flex justify-around">
-					<li class="flex flex-col justify-center items-center gap-1" style="color: ${colorActive};" title="Home">
-						<HomeIcon />
-						<span class="w-1 h-1 rounded-full" style="background-color: ${colorActive};">&nbsp;</span>
-					</li>
-					<li title="Contact"><ContactIcon /></li>
-					<li title="Notifications"><NotificationsIcon /></li>
-					<li title="User"><UserIcon /></li>
-				</ul>
-			</nav>
-		</footer>
-		<!-- Icons from https://heroicons.com/ -->
-		<!-- Design:  https://cdn.dribbble.com/users/4137552/screenshots/18017961/media/faac3923ed3090e01d8c239e076d72c2.jpg -->
-	</body>
+      input:focus-within ~ label,
+      input:not(:placeholder-shown) ~ label {
+        @apply transform scale-75 -translate-y-[100%] z-0 ml-3 px-1 py-0 text-lg absolute;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen block bg-gradient-to-b from-white via-white to-gray-100"
+  >
+    <header class="flex justify-between items-center p-4">
+      <button><MenuIcon /></button>
+      <a>
+        <span
+          class="bg-[#f1e3fc] text-white p-2 rounded-full transform rotate-45"
+        >
+          🤪
+        </span>
+      </a>
+    </header>
+    <main class="p-4">
+      <section>
+        <h2 class="text-xl font-light text-gray-500">Hey There!</h2>
+        <h1 class="text-2xl font-semibold">Find your meal now</h1>
+        <article class="flex w-100 my-4 gap-2" title="Search">
+          <form class="block flex-1 w-4/5">
+            <div
+              class="relative h-full flex items-center rounded-md border-2 focus-within:border-blue-500"
+            >
+              <span class="text-gray-300">
+                <SearchIcon />
+              </span>
+              <input
+                type="text"
+                placeholder=" "
+                class="h-full text-sm md:text-base block pl-4 w-full text-md appearance-none focus:outline-none bg-transparent"
+                name="q"
+              />
+              <label
+                class="absolute h-100 pl-8 text-gray-300 text-xs bg-white -z-10 duration-300 origin-[33%_0%]"
+                for="q"
+              >
+                <span class="relative top-[50%] transform translate-y-[-50%]"
+                  >Search</span
+                >
+              </label>
+            </div>
+          </form>
+          <button class="bg-[#FA6163] rounded-md text-white w-1/5 p-1">
+            <SettingsIcon />
+          </button>
+        </article>
+      </section>
+      <section class="mt-4">
+        <header class="flex justify-between">
+          <h3 class="text-xs font-bold">Categories</h3>
+          <a href="#" class="text-xs text-gray-500">See all</a>
+        </header>
+        <article class="mt-4">
+          <ul class="list-none grid grid-cols-5 gap-2 justify-between ">
+            <li>
+              <a
+                class="flex flex-col p-2 text-center bg-[#FA6163] text-white rounded-md"
+              >
+                <span class="text-2xl" title="Pizza Icon">🍕</span>
+                <span class="text-xs text-[0.66rem]">Pizzas</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex flex-col p-2 text-center border rounded-md">
+                <span class="text-2xl" title="Burger Icon">🍔</span>
+                <span class="text-xs text-[0.66rem]">Burgers</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex flex-col p-2 text-center border rounded-md">
+                <span class="text-2xl" title="Sandwich Icon">🥪</span>
+                <span class="text-xs text-[0.66rem]">Sandwich</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex flex-col p-2 text-center border rounded-md">
+                <span class="text-2xl" title="Croissant Icon">🥐</span>
+                <span class="text-xs text-[0.66rem]">Breakfast</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex flex-col p-2 text-center border rounded-md">
+                <span class="text-2xl" title="Brochette Icon">🍢</span>
+                <span class="text-xs text-[0.66rem]">Brochette</span>
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="mt-4">
+        <header class="flex justify-between">
+          <h3 class="text-xs font-bold">Meals for you</h3>
+          <a href="#" class="text-xs text-gray-500">See all</a>
+        </header>
+      </section>
+    </main>
+    <footer class="fixed bottom-0 w-full bg-white pb-4 pt-4">
+      <nav>
+        <ul class="flex justify-around">
+          <li
+            class="flex flex-col justify-center items-center gap-1"
+            style="color: ${colorActive};"
+            title="Home"
+          >
+            <HomeIcon />
+            <span
+              class="w-1 h-1 rounded-full"
+              style="background-color: ${colorActive};">&nbsp;</span
+            >
+          </li>
+          <li title="Contact"><ContactIcon /></li>
+          <li title="Notifications"><NotificationsIcon /></li>
+          <li title="User"><UserIcon /></li>
+        </ul>
+      </nav>
+    </footer>
+    <!-- Icons from https://heroicons.com/ -->
+    <!-- Design:  https://cdn.dribbble.com/users/4137552/screenshots/18017961/media/faac3923ed3090e01d8c239e076d72c2.jpg -->
+  </body>
 </html>

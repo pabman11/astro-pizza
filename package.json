@@ -6,11 +6,25 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+<<<<<<< Updated upstream
+=======
+    "lint": "eslint src/**/*.astro",
+    "format": "prettier -w .",
+    "postbuild": "node ./postbuild.mjs -path https://pabman11.github.io/astro-pizza/",
+>>>>>>> Stashed changes
     "preview": "astro preview"
   },
   "devDependencies": {
     "@astrojs/tailwind": "0.1.2",
+    "@babel/eslint-parser": "^7.17.0",
     "astro": "^1.0.0-beta.10",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier-plugin-astro": "^0.0.12",
     "tailwindcss": "3.0.24"
+  },
+  "dependencies": {
+    "@astronomer/eslint-config-astro": "^1.0.3"
   }
 }
