@@ -6,12 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-<<<<<<< Updated upstream
-=======
     "lint": "eslint src/**/*.astro",
     "format": "prettier -w .",
     "postbuild": "node ./postbuild.mjs -path https://pabman11.github.io/astro-pizza/",
->>>>>>> Stashed changes
     "preview": "astro preview"
   },
   "devDependencies": {
